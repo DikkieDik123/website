@@ -62,9 +62,9 @@
                             <h1>Description of the challenge</h1>
                             <figure class="figure">
                                 <img src="assets/img/Frozen North/Challenge-description.png" alt="Screenshot of the challenge description" class="img-fluid"/>
-                                <figcaption class="figure-caption">Figure 1: Screenshot of the challenge description</figcaption>
+                                <figcaption class="figure-caption">Figure 1: Screenshot of the challenge description.</figcaption>
                             </figure>
-                            <p>The challenge description is shown in Figure 1. It describes a situation where a ship docked at a port. The challenge is to find the IMO-number of the ship using open source intelligence (OSINT) techniques.</p>
+                            <p>The challenge description is shown in Figure 1. It describes a situation where a ship docked at a port. The challenge is to find the IMO-number of the ship using open-source intelligence (OSINT) techniques.</p>
                             <p>My first approach was to use Google lens and see if any of the shapes matched on Google images. However, this didn't yield any good results.</p>
                             <p>Next, I decided I needed to use a more analytical approach. As per usual, I started off by listing everything we know by looking at the image. What can we see?
                                 <ul></ul>
@@ -79,64 +79,64 @@
                                 </ul>
                             </p>
                             <h1>Initial approaches</h1>
-                            <p>My first approach was to start up Marinetraffic. Using the map, you can see a list of ports on the map. I went trough each port on the sea in the Artic to check if they matched the location. This took a lot of time and it turned out to be a waste of time, as there is no match.</p>
-                            <p>In a act of desperation, I decided to use Google Earth and scour the coastline of Siberia, Alaska, Greenland and Canada and focus on coastal settlements. This took even more time, and although I liked doing this, it also was not helpful.</p>
-                            <p>By this time I spent a lot of time on this challenge already, by my estimate, an easy 16 hours. I knew that there had to be a smarter approach. I left the challenge for what it was for a few days, and next time I booted it up, I had an eureka moment.</p>
+                            <p>My first approach was to start up Marinetraffic. Using the map, you can see a list of ports on the map. I went trough each port on the sea in the Artic to check if they matched the location. This took a lot of time, and it turned out to be a waste of time, as there is no match.</p>
+                            <p>In an act of desperation, I decided to use Google Earth and scour the coastline of Siberia, Alaska, Greenland and Canada and focus on coastal settlements. This took even more time, and although I liked doing this, it also was not helpful.</p>
+                            <p>By this time, I spent a lot of time on this challenge already, by my estimate, an easy 16 hours. I knew that there had to be a smarter approach. I left the challenge for what it was for a few days, and next time I booted it up, I had an eureka moment.</p>
                             
                             <h2>Overlooking the obvious</h2>
-                            <p>I decided to check the image again. Normally, I do download the image to check the metadata and to open the image in my photo-editor, as this allows me to see more details and zoom in further. And what did i Notice? The filename of the picture contained useful information. There is a date and time visible: <strong>.../20220901_091318-C5etx_H-.png</strong>. The image was taken in 2022, at the first of September, at 09:13.</p>
-                            <p>The screenshot Bellingcat provided was taken from a website that has satellite information. We know that the timezone is UTC, as this is the standard for satellite imagery. Furthermore, we can just see a bit of shade in the image, which gives us a clue about the relative position of the sun.</p>
+                            <p>I decided to check the image again. Normally, I do download the image to check the metadata and to open the image in my photo-editor, as this allows me to see more details and zoom in further. And what did I notice? The filename of the picture contained useful information. There is a date and time visible: <strong>.../20220901_091318-C5etx_H-.png</strong>. The image was taken in 2022, at the first of September, at 09:13.</p>
+                            <p>The screenshot Bellingcat provided was taken from a website that has satellite information. We know that the time zone is UTC, as this is the standard for satellite imagery. Furthermore, we can just see a bit of shade in the image, which gives us a clue about the relative position of the sun.</p>
                             <figure class="figure">
                                 <img src="assets/img/Frozen North/shade.png" alt="Location of the Shade and the Sun" class="img-fluid"/>
-                                <figcaption class="figure-caption">Figure 2: Location of the Shade and the Sun</figcaption>
+                                <figcaption class="figure-caption">Figure 2: Location of the Shade and the Sun.</figcaption>
                             </figure>
                             <h1>Having fun with Suncalc and timeszones</h1>
-                            <p>At this point, I was very confident that I found the way to the solution to this challenge. Now I know where the sun was likely to be, I needed to play around on the map with timezones to get it just right.</p>
+                            <p>At this point, I was very confident that I found the way to the solution to this challenge. Now I know where the sun was likely to be, I needed to play around on the map with time zones to get it just right.</p>
                             <p>UTC is the same as GMT, or in other words, the time in Greenwich at the moment the satellite image was taken. If you fill in the date and time into Suncalc and place it on Greenwich, you can see the location of the sun.</p>
                             <figure class="figure">
                                 <img src="assets/img/Frozen North/Suncalc at GMT.png" alt="Suncalc" class="img-fluid"/>
-                                <figcaption class="figure-caption">Figure 3: Suncalc when placed at Greenwich September 1st 2022 at 09:13 GMT</figcaption>
+                                <figcaption class="figure-caption">Figure 3: Suncalc when placed at Greenwich September 1st, 2022, at 09:13 GMT.</figcaption>
                             </figure>
-                            <p>As you can see in Figure 3, the sun is too far east. That means we are looking at a place that is further east. We have to take timezones into account here. Shifting the location of the sun to the east, and also adjusting the timezone to match, we can match the location of the sun as shown in Suncalc to the location of the sun that we derived from the satellite image.</p>
+                            <p>As you can see in Figure 3, the sun is too far east. That means we are looking at a place that is further east. We have to take time zones into account here. Shifting the location of the sun to the east, and also adjusting the time zone to match, we can match the location of the sun as shown in Suncalc to the location of the sun that we derived from the satellite image.</p>
                             <figure class="figure">
                                 <img src="assets/img/Frozen North/Suncalc further east.png" alt="Suncalc when place further east to match the location as shown in the satellite imagery" class="img-fluid"/>
-                                <figcaption class="figure-caption">Figure 4: Suncalc when placed further east to match the location as shown in the satellite imagery</figcaption>
+                                <figcaption class="figure-caption">Figure 4: Suncalc when placed further east to match the location as shown in the satellite imagery.</figcaption>
                             </figure>
-                            <p>From this moment on, we have a rough idea where the port should be. Following the line north of our placed location on Suncalc, we can see that it intersects with the artic coastline at different points. </p>
-                            <p>First, Google maps was used to scout settlements on the north-coast of syberia, but nothing matched. Did the same thing on Novya Zemla, and again, no match.</p>
+                            <p>From this moment on, we have a rough idea where the port should be. Following the line north of our placed location on Suncalc, we can see that it intersects with the arctic coastline at different points. </p>
+                            <p>First, Google maps was used to scout settlements on the north-coast of Siberia, but nothing matched. Did the same thing on Novya Zemla, and again, no match.</p>
                             <h1>Wikipedia helps us out</h1>
                             <p>One more option were the Franz Joseph islands, and I looked on Wikipedia if there were any settlements: <a href="https://en.wikipedia.org/wiki/Franz_Josef_Land">https://en.wikipedia.org/wiki/Franz_Josef_Land</a>. Interestingly, the article does in fact mention the presence of a Russian military base, namely <strong>Nagurskoye</strong>.</p>
                             <p>Google maps shows the location of Nagurskoye, and it is clear that this is the location the ship was at in September 2022.</p>
                             <figure class="figure">
                                 <img src="assets/img/Frozen North/Nagurskoye.png" alt="Nagurskoye on Google Maps" class="img-fluid"/>
-                                <figcaption class="figure-caption">Figure 5: Nagurskoye on Google Maps in satellite view</figcaption>
+                                <figcaption class="figure-caption">Figure 5: Nagurskoye on Google Maps in satellite view.</figcaption>
                             </figure>
                             <figure class="figure">
                                 <img src="assets/img/Frozen North/satellite image.png" alt="The original image" class="img-fluid"/>
-                                <figcaption class="figure-caption">Figure 6: Location from the challenge description. Note the similarities</figcaption>
+                                <figcaption class="figure-caption">Figure 6: Location from the challenge description. Note the similarities.</figcaption>
                             </figure>
-                            <p>The roads are still distinguisable, and the little structures are also still there. Yes, they build a pier and the lake on the North is not clearly visible, but still, the location is a definite match!</p>
+                            <p>The roads are still distinguishable, and the little structures are also still there. Yes, they build a pier and the lake on the North is not clearly visible, but still, the location is a definite match!</p>
                             <h1>Finding the IMO number</h1>
-                            <p>We now now the location, date and time of the ship. Next, we need to find what ship it was, find the IMO number, and confirm it is really matches the ship in the image.</p>
-                            <p>Global Fish Watch (GFW) stores all the necessary information for us to find out what ships were at that location at September 1, 2022. Using GFW, the date and location gave the following information: <a href="https://globalfishingwatch.org/map/index?longitude=48.08866794722606&latitude=80.72000786550042&zoom=9.162824836837329&start=2022-09-01T00%3A00%3A00.000Z&end=2022-09-02T00%3A00%3A00.000Z&dvIn[0][id]=loitering&dvIn[0][cfg][vis]=true&dvIn[1][id]=presence&dvIn[1][cfg][vis]=true&dvIn[2][id]=vms&dvIn[2][cfg][vis]=false&dvIn[3][id]=ais&dvIn[3][cfg][vis]=false&bDV&tV=events">https://globalfishingwatch.org/map/index?longitude=48.08866794722606&latitude=80.72000786550042&zoom=9.162824836837329&start=2022-09-01T00%3A00%3A00.000Z&end=2022-09-02T00%3A00%3A00.000Z&dvIn[0][id]=loitering&dvIn[1][id]=presence&dvIn[1][cfg][vis]=true&dvIn[2][id]=vms&dvIn[2][cfg][vis]=false&dvIn[3][id]=ais&dvIn[3][cfg][vis]=false&bDV&tV=events</a></p>
+                            <p>We now know the location, date and time of the ship. Next, we need to find what ship it was, find the IMO number, and confirm it is really matches the ship in the image.</p>
+                            <p>Global Fish Watch (GFW) stores all the necessary information for us to find out what ships were at that location on September 1, 2022. Using GFW, the date and location gave the following information: <a href="https://globalfishingwatch.org/map/index?longitude=48.08866794722606&latitude=80.72000786550042&zoom=9.162824836837329&start=2022-09-01T00%3A00%3A00.000Z&end=2022-09-02T00%3A00%3A00.000Z&dvIn[0][id]=loitering&dvIn[0][cfg][vis]=true&dvIn[1][id]=presence&dvIn[1][cfg][vis]=true&dvIn[2][id]=vms&dvIn[2][cfg][vis]=false&dvIn[3][id]=ais&dvIn[3][cfg][vis]=false&bDV&tV=events">https://globalfishingwatch.org/map/index?longitude=48.08866794722606&latitude=80.72000786550042&zoom=9.162824836837329&start=2022-09-01T00%3A00%3A00.000Z&end=2022-09-02T00%3A00%3A00.000Z&dvIn[0][id]=loitering&dvIn[1][id]=presence&dvIn[1][cfg][vis]=true&dvIn[2][id]=vms&dvIn[2][cfg][vis]=false&dvIn[3][id]=ais&dvIn[3][cfg][vis]=false&bDV&tV=events</a></p>
                             <p>Only one ship was present at that location: the Mekhanik Pyatlin.</p>
                             <figure class="figure">
                                 <img src="assets/img/Frozen North/GFW.png" alt="The location of the Mekhanik Pyatlin on Global Fish Watch" class="img-fluid"/>
-                                <figcaption class="figure-caption">Figure 7: The location on Global Fish Watch, showing the presence of the Mekhanik Pyatlin</figcaption>
+                                <figcaption class="figure-caption">Figure 7: The location on Global Fish Watch, showing the presence of the Mekhanik Pyatlin.</figcaption>
                             </figure>
                             <p>GFW shows that the IMO number of the ship is the following: 8904434.</p>
                             <figure class="figure">
                                 <img src="assets/img/Frozen North/GFW info about the ship.png" alt="IMO number of the Mekhanik Pyatlin as shown on GFW" class="img-fluid"/>
-                                <figcaption class="figure-caption">Figure 8: IMO number of the Mekhanik Pyatlin as shown on GFW</figcaption>
+                                <figcaption class="figure-caption">Figure 8: IMO number of the Mekhanik Pyatlin as shown on GFW.</figcaption>
                             </figure>
                             <p>Looks like we found the number. But as an extra check we can also check Vesselfinder.org, and see if the shape and colours of the ship match what we can see on the satellite image.</p>
                             <figure class="figure">
                                 <img src="assets/img/Frozen North/Vesselfinder.png" alt="Mekhanik Pyatlin on Vesselfinder.org" class="img-fluid"/>
-                                <figcaption class="figure-caption">Figure 9: Mekhanik Pyatlin on Vesselfinder.org</figcaption>
+                                <figcaption class="figure-caption">Figure 9: Mekhanik Pyatlin on Vesselfinder.org.</figcaption>
                             </figure>
-                            <p>As you can see in Figure 9, the shape of the ship matches the shape of the ship in the satellite image. The colours also match. So we can be quite certain that the IMO number 8904434 is indeed the correct answer to this challenge.</p>
+                            <p>As you can see in Figure 9, the shape of the ship matches the shape of the ship in the satellite image. The colours also match. So, we can be quite certain that the IMO number 8904434 is indeed the correct answer to this challenge.</p>
                             <h1>Conclusion</h1>
-                            <p>This OSINT challenge was a real test of my skills. It also shows that changing ones approach to a more analytical one is key to solving complex problems. Being persistant and using the right tools helped a lot to solve this challenge, and from the moment I used Suncalc to finding the IMO-number of the ship only took me about 10 minutes.</p>
+                            <p>This OSINT challenge was a real test of my skills. It also shows that changing one's approach to a more analytical one is key to solving complex problems. Being persistent and using the right tools helped a lot to solve this challenge, and from the moment I used Suncalc to finding the IMO-number of the ship only took me about 10 minutes.</p>
                             <p>I hoped you enjoyed this challenge as much as I did, and maybe you even learned something new from it!</p>
                         </div>
                     </div>
