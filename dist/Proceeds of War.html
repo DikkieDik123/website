@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Proceeds of War</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About me</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/Proceeds\ of\ War/Chinese-art.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Proceeds of War</h1>
+                            <span class="subheading">OSINT Challenge; part of Cultural Confusion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <!-- introduction-->
+                         <div>
+                            <h1>Proceeds of War</h1>
+                            <subheading>Spoiler alert: challenge solution ahead</subheading>
+                            <p>Another guide on how to solve an OSINT challenge, again from Bellingcat. <br> I started this challenge when it came out, but I never really finished the challenge. Today however, I gave it another go and I solved this challenge!</p>
+                        </div>
+                        <!-- challenge description-->
+                        <div>
+                            <h1>Description of the challenge</h1>
+                                <figure class="figure">
+                                    <img src="assets/img/Proceeds of War/Description.png" alt="Screenshot of the top part of the challenge" class="img-fluid"/>
+                                    <figcaption class="figure-caption">Figure 1: Screenshot of the top part of the Challenge. Source: Challenge.bellingcat.com</figcaption>
+                                </figure>
+                            <p>Figure One displays the image which is present with the challenge. The challenge text is the following:</p>
+                            <figure>
+                                <blockquote class="blockquote">
+                                    <p>At least one of the curving scabbards in this photo, inlaid on each side and owned by a famous individual, was listed recently on the dark web for an astronomically high sum. <br><br>
+                                        Having attacked the Japanese-held territories in China and Korea during the final weeks of World War II, the Soviet army invaded Manchuria and captured the owner of this weapon as he attempted to flee China for Japan.<br><br>
+                                        Despite China's demands that the Kremlin return the POW so he could be tried as a war criminal, the man remained in Soviet custody for years. Desperate not to be handed back to the Chinese, the prisoner made several requests for permanent asylum. He petitioned Joseph Stalin directly and gave his collection to the government of the USSR, which took him up on his donation and then handed him back to China anyway.<br><br>
+                                        What happened to the bulk of this gentleman's treasure after World War II is murky. We do know it travelled from Russia to Ukraine and was displayed as part of a private collection tied to two wealthy Ukrainians.<br><br>
+                                        In 2023, the Security Service of Ukraine (SBU) detained the collection as the Asian pieces were being transported out of Ukraine and into Europe.<br><br>
+                                        Based on public media reports, what is the presumed nationality of the dark web seller?</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer">
+                                    Source: <cite title="Source Title">Bellingcat</cite>
+                                </figcaption>
+                            </figure>                            
+                        </div>
+                        <!-- my solution to this challenge-->
+                         <div>
+                            <h1>Solving this challenge</h1>
+                            <p>First, I downloaded the image and looked through the metadata, as I always do, but no useful information was obtained.</p>
+                            <p>Then, instead of searching by the events in the text, I reverse-image searched the picture seen in the challenge (see figure 1). As it happens, the exact image is listed <a href="https://www.dreamstime.com/lviv-ukraine-december-ritual-daggers-qing-dynasty-medieval-history-china-image172872569">here</a>.</p>
+                            <figure class="figure">
+                                <img src="assets/img/Proceeds of War/Stock image.png" alt="The stock image with the daggers" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 2: The stock image with the daggers visible. See above URL for the source.</figcaption>
+                            </figure>
+                            <p>The stock image came with a brief description. Here, the date and place are listed, and we can assume this picture was taken when the daggers were in an exhibition.</p>
+                            <p>Following this new information, I googled "Lviv chinese dagger". The AI Overview, not always useful, suggested an article that mentions the SBU together with these daggers. I followed the source and it redirected me to the Babel (in Cyrillic) website.</p>
+                            <figure class="figure">
+                                <img src="assets/img/Proceeds of War/Google result lviv chinese dagger.png" alt="Google search result for lviv chinese dagger" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 3: Google search result for lviv chinese dagger.</figcaption>
+                            </figure>
+                            <p>You can read <a href="https://babel.ua/en/news/95336-sbu-and-customs-detained-part-of-the-platar-collection-which-belongs-to-serhiy-taruta-exhibits-wanted-to-be-taken-abroad#:~:text=The%20Chinese%20collection%20%22Platar%22%20was%20exhibited%20in,Gallery.%20Author:%20Ghanna%20Mamonova%20Editor:%20Kateryna%20Kobernyk.">this</a> about how the SBU detained Chinese daggers. I was fairly certain the Babel article is related to the particular daggers in the challenge because a lot of information matches the description information of the challenge. For example, Platar, the organization that “owns” these artworks is owned by two wealthy Ukrainians. Also, it mentions the exhibition that took place in Lviv, where we know the knives were exhibited.</p>
+                        </div>
+                        <!-- second part of the challenge-->
+                        <div>
+                            <h2>Getting closer</h2>
+                            <p>By this point, we gathered a lot of information. We know that the daggers were exhibited in Lviv, and that they are owned by an organization called Platar. The owner of Platar (at least, the one most prominently mentioned in the article) is called Serhiy Taruta. More information is listed, such as the supposed destination of the artworks. <b>Crucially, however, the nationality of the dark-web seller of the art is not mentioned.</b></p>
+                            <h3>Failed attempts at finding the seller</h3>
+                            <p>Before I jump to the right solution, I want to be clear that I was stuck here for a couple of hours. Here's some not so fruitful approaches I took first:
+                                <ul>
+                                    <li>Googled for "Taruta" and "dark web";</li>
+                                    <li>Googled on "Taruta" and "SBU";</li>
+                                    <li>Used Yandex to search for the above items. Also, I resorted to Googling these items in Cyrillic, but to no avail.</li>
+                                </ul>
+                            </p>
+                            <h3>How I finally found the answer</h3>
+                            <p>I decided to take a step back. I needed to keep it simpler, broaden my searches. I decided it would be worth a try to see if there was a connection between "Platar" and "SBU". So that's what I searched for. "Platar" AND "SBU" initially gave the same search results as searching for "Taruta" and "SBU", namely a bunch of articles that were near copies of the Babel article. But then, on the second Google page, there was a Spanish article. This caught my attention, as there was no apparent link between the Chinese daggers and Spain.</p>
+                            <p>Visiting <a href="https://www.elmundo.es/cronica/2023/10/30/653c36cb21efa052208b45a5.html">that page</a> it became clear that this article had the answer to the challenge. This article starts with a journalist describing he talked to a man with a "Northern Spanish" accent about the Chinese treasure as described in the challenge. Further down in the article, one can see an image of the dagger that can be seen in Bellingcat's image of the challenge. Also, the background regarding the artworks matches the Bellingcat article; in short, I was sure that the Spanish journalists were talking to the alleged seller of the art.</p>
+                            <p>And because the seller had a Northern Spanish accent, I masterly deduced that the seller must be Spanish. Lo and behold, this turned out to be the answer!</p> 
+                            <!-- Conclusion-->   
+                            <h1>Conclusion</h1>
+                            <p>This challenge was a fun one, albeit not terribly complicated. Did I take the easiest route? Probably not - I could have googled the key events given in the story (namely that the art was detained in 2023) and I could have skipped reverse-searching the image that was provided. However, I wanted to make sure I wouldn't fall into a trap of researching a different bunch of art that was detained in 2023 and having to restart the search all over again.</p>
+                            <p>To focus on Taruta might also have given the answer, but because this man is quite the public figure with arguably a questionable history, which was unhelpful.</p>
+                            <p>Thanks for reading and I hope that you liked this post!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/dstuut">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="mailto:ds2110full@gmail.com">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Dick Stuut <script>document.write(new Date().getFullYear())</script></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
