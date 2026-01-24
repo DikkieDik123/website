@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>OSINT Advent Calendar: Part 2</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About me</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/OSINT\ for\ fun\ advent\ calendar/bg_dark_christmas.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>OSINT Advent Calendar: Part 2</h1>
+                            <span class="subheading">Day 5 till 8 of the OSINT For Fun Advent Calendar 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <!-- introduction-->
+                         <div>
+                            <h1>OSINT For Fun Advent calendar: part 2</h1>
+                            <subheading>Spoiler alert: solution ahead</subheading>
+                            <p>OSINT for Fun has a great number of challenges on their website. Each challenge is usually faster to complete than the Bellingcat ones, so that's why I do multiple at a time.<br> As I was on holiday in December, now is the time to complete the advent calendar.</p>
+                            <p>This post, I'm going to show how I solved the challenges of day 5 till 8.</p>
+                        </div>
+                        <!-- challenge description-->
+                        <div>
+                            <h1>Day 5</h1>
+                            <h2>When in doubt, dork it out!</h2>
+                            <p><figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/5/Question 1.png" alt="Question of day 5" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 1: Description of challenge 5.</figcaption>
+                            </figure>
+                            This challenge seems easy. Find two decrees that are listed on Wordpress websites that belong to municipalities, which degree that the Grinch is not welcome.</p>
+                            <p>However, I made this challenge way too hard for myself, which unfortunantly sometimes happens.</p>
+                            <p>I knew I had to dork my way trough this challenge. What I assumed, however, is that the decree would stipulate that ANY "bad" character that might hinder Santa from doing it's job would be banned.</p>
+                            <p>My second mistake was that I assumed that the website would be hosted for free, on Wordpress.com. And if not, I assumed that the website would have the word "wordpress" in there, which wasn't the case in the end.</p>
+                            <p>Long story short, I figured out that I could not find the documents via site:wordpress.com. I also found that using the operator "Wordpress" wasn't completely sufficient, as I could only find one of the two decrees this way.</p>
+                            <p>Because I used a little bit of Wordpress in the past, I know that the standard configuration to save documents is to store them into wp-content. However, I realized this late. But it turned out to be the key to solve the riddle.</p>
+                            <p>This is the dork that I finally used to complete the challenge: <b>"arrêté" AND "Grinch" AND "wp-content"</b>. And that led me to see the following: 
+                                <figure class="figure">
+                                    <img src="assets/img/OSINT for fun advent calendar/5/Google results.png" alt="Result of the dork" class="img-fluid"/>
+                                    <figcaption class="figure-caption">Figure 2: Google dork result page.</figcaption>
+                                </figure>
+                            </p>
+                            <p>From there, I saw that there were two results which are relevant because they were from 2024. And as a bonus I found another blog doing the exact same thing, which is annoying but hey, at least I know that I'm on the right way.</p>
+                            <p>After downloading the PDF's and translating them using my phone, I concluded that these decrees are what I was looking for, and I noted down the surnames of the mayors: <b>Dupuy and Driol</b>. Et voila, challenge completed!</p>
+                        </div>
+                        <!-- divider between the first challenge and the second one-->
+                        <hr class="my-4" />
+                        <!-- second challenge-->
+                        <div>
+                            <h1>Day 6</h1>
+                            <h2>Fishing for the right influencer</h2>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/6/Question.png" alt="Question of day 6" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 3: Description of challenge 6.</figcaption>
+                            </figure>
+                            <p>This "inspiring" video is posted on Linkedin, which I have an account for, as you might have guessed from my website already. My first action was to play the video. There is a boy catching two big fishes using a funny device. Not too inspiring, if you ask me, but hey, good for him.</p>
+                            <p>I want to get an image of the video, so I can try to reverse-search this. So what I did, is go to the HTML-viewer of Firefox to seek out the image that is used as the thubnail. If you don't understand, take a close look in the next figure. You can see the code of the page next to the image, and there is a link to the thumbnail of the video: 
+                                <figure class="figure">
+                                    <img src="assets/img/OSINT for fun advent calendar/6/HTML.png" alt="Image showing the video next to the HTML-viewer to see the source code of the image" class="img-fluid"/>
+                                    <figcaption class="figure-caption">Figure 4: Finding the URL to the thumbnail of the video.</figcaption>
+                                </figure>
+                                <br> I open the image in the browser, and then I used my plugin to reverse-search the image on Google.
+                                <figure class="figure">
+                                    <img src="assets/img/OSINT for fun advent calendar/6/Reverse Image Search.png" alt="Reverse image search of the thumbnail" class="img-fluid"/>
+                                    <figcaption class="figure-caption">Figure 5: Reverse image search is used to find more information</figcaption>
+                                </figure>
+                            </p>
+                            <p>There were many results. First, I clicked on "About this image". Google was so kind to show me that similar images are at least 3 years old, meaning that the first result was probably not older than 5 years, or Google might have known it. I'm still not trusting Google completely, but it gives me a good indication.
+                                <figure class="figure">
+                                    <img src="assets/img/OSINT for fun advent calendar/6/About this image.png" alt="About this image" class="img-fluid"/>
+                                    <figcaption class="figure-caption">Figure 5: About this image.</figcaption>
+                                </figure>
+                            </p>
+                            <p>Next, I went to the tab "Visual Matches". I want to find an exact match of the image, and I thought this page could help me. The other pages of Google showed that a lot of people reposted the same video, and I didn't feel like going through them to see which one was the olderst.</p>
+                            <p>Luckily for me, a news article mentions is linked that wrote about this exact video:
+                                <figure class="figure">
+                                    <img src="assets/img/OSINT for fun advent calendar/6/News Article.png" alt="The news source in the list of results from the Visual Matches tab in Google" class="img-fluid"/>
+                                    <figcaption class="figure-caption">Figure 6: The news source in the list of results from the Visual Matches tab in Google.</figcaption>
+                                </figure>
+                            </p>
+                            <p>The article talks about the video being posted by a billionaire on Twitter, on April 1st. I'm guessing that this person is considered an influencer, cause there are news-outlets writing about this.   
+                                <figure class="figure">
+                                    <img src="assets/img/OSINT for fun advent calendar/6/Twitter.png" alt="Screenshot of the news article showing the name of the influencer" class="img-fluid"/>
+                                    <figcaption class="figure-caption">Figure 7: Screenshot of the news article showing the name of the influencer that shared this video on Twitter.</figcaption>
+                                </figure>
+                            </p>
+                            <p>We now know a name: <b>Anand Mahindra</b>. Recognizable name, as Mahindra is a huge company that also makes cars. It was indeed this man who made the video go viral!</p>
+                        </div>
+                        <!-- divider -->
+                        <hr class="my-4" />
+                        <!-- third challenge -->
+                        <div>
+                            <h1>Day 7</h1>
+                            <h2>Sounds good to me!</h2>
+                            <h3>7.1</h3>
+                            <p>This challenge is a chain of shorter ones, as it consists out of multiple parts. The first question relates to the surnames of people who are being thanked in the recording of the record which is shown. Should not be too difficult.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/7/Question.png" alt="Question of day 7" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 8: Question of day 7.</figcaption>
+                            </figure>
+                            <p>First, I wanted to find a recording of the record. I did this by reverse-image searching the image on screen, and learning that the record is called "The Beatles Christmas Record".</p>
+                            <p>Entering "The Beatles Christmas Record recording" into Google led me to a <a href="https://www.dailymotion.com/video/x55a4om">Dailymotion page</a>. Listening to the recording, I could clearly hear that man in the recording is thanking the secretaries for all the work. However, I could not clearly hear the names of the secretaries.</p>
+                            <p>So I did some Googling. I found very quickly that one of the secretaries mentioned must refer to the secretary of the fanclub of the Beetles, called <b>Freda Kelly</b>. And soon that the other secretaries were <b>Ann Collingham and Bettlina Rose</b>, even though these persons are ficticous. Still, it matched the recording!</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/7/Clues.png" alt="A website mentioning the names of the ficticious other secretaries" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 9: Screenshot of <a href="https://sixtiescity.net/Music/Beatlegirl/BeatleGirl.htm">sextiescity.net</a> where the other ficticious girls are mentioned.</figcaption>
+                            </figure>
+                            <p>So, the answer to the first part of the question is: Kelly Collingham Rose.</p>
+                            <h3>7.2</h3>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/7/Next Question.png" alt="Second question of the challenge" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 10: Second part of the challenge.</figcaption>
+                            </figure>
+                            <p>Question: Find an envelope sent to Kelly back when she first started the fanclub and find out where it originated from. Again, doesn't seem to difficult.</p>
+                            <p>I started to google "Freda Kelly documentary" and I found a trailer to the documentary. The first video result is a youtube video, which shows an envelope in the screen.</p>
+                            <p>Using the comma and dot keys to stop the video on a specific frame, I saw that the letter had a stamp saying "galati tranzit". 
+                                <figure class="figure">
+                                    <img src="assets/img/OSINT for fun advent calendar/7/Frame with the stamp.png" alt="Frame where you can see the stamp on the letter in the trailer of the documentary on Youtube." class="img-fluid"/>
+                                    <figcaption class="figure-caption">Figure 11: Frame where you can see the stamp on the letter in the trailer of the documentary on Youtube.</figcaption>
+                                </figure>
+                            </p>
+                            <p>The stamp is usally the originating city of the sender, so I Googled: "galati tranzit". The results show point to Galati, a city in Romania.
+                                <figure class="figure">
+                                    <img src="assets/img/OSINT for fun advent calendar/7/Romania.png" alt="Google search results for galati tranzit" class="img-fluid"/>
+                                    <figcaption class="figure-caption">Figure 12: Google search results for galati tranzit.</figcaption>
+                                </figure>
+                            </p>
+                            <p>Filling in Galati Romania is the right answer - onto the last part of the challenge!</p>
+                            <h3>7.3</h3>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/7/Question three.png" alt="Last part of day 7" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 13: Last part of day 7.</figcaption>
+                            </figure>
+                            <p>There is a museum that shows a 1965 flexi-disk. We need to find the inventory number.</p>
+                            <p>I went back to Wikipedia to find the title of the 1965 flexi disk. Very originally, they called it "The Beatles Third Christmas Record".</p>
+                            <p>Next, I did something radical. I googled "third christmas record museum" and whent to the first hit.</p>
+                            <p>
+                                <figure class="figure">
+                                    <img src="assets/img/OSINT for fun advent calendar/7/Google Third Record Museum.png" alt="Google result for third christmas record museum" class="img-fluid"/>
+                                    <figcaption class="figure-caption">Figure 14: Google result for "third christmas record museum".</figcaption>
+                                </figure>
+                                The record is on display in Liverpool. 
+                                <figure class="figure">
+                                    <img src="assets/img/OSINT for fun advent calendar/7/Record on display.png" alt="Screenshot of the record in the Natinoal Museums Liverpool" class="img-fluid"/>
+                                    <figcaption class="figure-caption">Figure 15: Screenshot of the record in the Natinoal Museums Liverpool.</figcaption>
+                                </figure>
+                            </p>
+                            <p>In figure 15 the inventory number is clearly visible: <b>MLL.2005.41.28</b>. And this is exactly the number we need to complete day 7.</p>
+                        </div>
+                        <!-- divider -->
+                        <hr class="my-4" />
+                        <!-- fourth challenge -->
+                        <div>
+                            <h1>Day 8</h1>
+                            <h2>Le French movie</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/dstuut">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="mailto:ds2110full@gmail.com">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Dick Stuut <script>document.write(new Date().getFullYear())</script></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
