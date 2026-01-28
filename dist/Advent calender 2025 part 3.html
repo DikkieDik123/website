@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>OSINT Advent Calendar: Part 3</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About me</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/OSINT\ for\ fun\ advent\ calendar/bg_dark_Christmas.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>OSINT Advent Calendar: Part 3</h1>
+                            <span class="subheading">Day 9 to 12 of the OSINT For Fun Advent Calendar 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <!-- introduction-->
+                         <div>
+                            <h1>OSINT For Fun Advent calendar: part 3</h1>
+                            <subheading>Spoiler alert: solution ahead</subheading>
+                            <p>OSINT for Fun has a great number of challenges on their website. Each challenge is usually faster to complete than the Bellingcat ones, so that's why I do multiple at a time.<br> You might notice that the progress seems slow. This is because writing it up takes much longer than completing the challenges.</p>
+                            <p>This post, I'm going to show how I solved the challenges of day 9 through 12.</p>
+                        </div>
+                        <!-- challenge description-->
+                        <div>
+                            <h1>Day 9</h1>
+                            <h2>Who said statues couldn't move?!</h2>
+                            <p><figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/9/Question.png" alt="Question of day 9" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 1: Description of challenge 9.</figcaption>
+                            </figure>
+                            We can hear a song. I could've Shazammed the song, but instead I Googled this sentence which one can hear: "I first set my eyes on sweet Molly Malone".
+                            I instantly knew that this challenge was going to be about the Molly Malone statue, located in Dublin. For context, I saw it as a tourist back in 2017. 
+                            </p>
+                            <p>The challenge description mentions that the statue was moved, so first we need to find its original location. The <a href="en.wikipedia.org/wiki/Molly_Malone#Statue">Wikipedia page</a> for the statue mentions that it was placed at the bottom of Grafton Street, and that the statue was moved in April 2014.</p>
+                            <p>Great! Now we need to see if there's some way to see what it looked like. And Google Maps, very conveniently, can help us out here!</p>
+                            <p>By going to the North-end of Grafton Street in Google Street View and changing the date to June 2009, we can see the statue in its old location.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/9/Streetview.png" alt="Streetview of Molly Malone in 2009" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 2: Streetview of Molly Malone in 2009.</figcaption>
+                            </figure>
+                            <p>We can see that the statue faces a pediment that says <b>IRISH PERMANENT</b>. Day 9 done!</p>
+                        </div>
+                        <!-- divider between the first challenge and the second one-->
+                        <hr class="my-4" />
+                        <!-- second challenge-->
+                        <div>
+                            <h1>Day 10</h1>
+                            <h2>African answers</h2>
+                            <p><figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/10/Question.png" alt="Question of day 10" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 3: Description of challenge 10.</figcaption>
+                            </figure></p>
+                            <p>This challenge is a bit more serious. Find the park where 19 rhinos were poached.</p> 
+                            <p>First, I started to Google, simply typing: 19 rhinos killed december 2024. The first hit contained the answer: <b>Kruger</b> National Park.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/10/Kruger.png" alt="The Daily Sun reporting on 19 rhino deaths in Kruger" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 4: The <a href="https://www.snl24.com/dailysun/news/kruger-national-park-reports-an-increase-of-rhino-poaching-during-the-festive-season-20250108">Daily Sun</a> reporting on 19 rhino deaths in Kruger.</figcaption>
+                            </figure>
+                            <p>That's the first part of the challenge. Next, I was asked to find out how many rhinos were killed in 2017 and 2023 in the province with the most killings.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/10/question 2.png" alt="Second question of day 10" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 5: Second question of day 10.</figcaption>
+                            </figure>
+                            <p>The first step is to figure out what province we need to look into. This was once again performed by a simple Google search.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/10/Killings per province.png" alt="Google result to see the provinces with the most poachings" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 6: Google result to see the provinces with the most poachings.</figcaption>
+                            </figure>
+                            <p>Clearly, it's KwaZulu-Natal which sees the most rhino killings in South Africa. Next, I needed to find the number of killed rhinos in 2017. I used the following Google query to find the answer on Save the Rhino International's webpage: rhino killings 2017 kwazulu natal. In 2017, 222 rhinos were poached.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/10/rhino killings in 2017.png" alt="Rhino killings in 2017" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 7: Number of rhino killings in 2017, from <a href="https://www.savetherhino.org/africa/whats-going-on-in-kwazulu-natal-south-africa/">Save the Rhino International</a></figcaption>
+                            </figure>
+                            <p>Next, I needed to find the number of rhinos killed in 2023. I simply altered the query by replacing "2017" with "2023" and clicked on the first two hits. Both showed the same answer, namely that an estimated 325 rhinos were killed.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/10/rhino killings in 2023.png" alt="Rhino killings in 2023" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 8: Number of rhinos killed in 2023, from <a href="https://eia.org/blog/another-devastating-year-for-rhinos-in-kwazulu-natal/">environmental investigation agency</a>.</figcaption>
+                            </figure>
+                            <p>The answer to the question is thus <b>222 325</b>.</p>
+                        </div>
+                        <!-- divider -->
+                        <hr class="my-4" />
+                        <!-- third challenge -->
+                        <div>
+                            <h1>Day 11</h1>
+                            <h2>My lucky day</h2>
+                            <p><figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/11/Question.png" alt="Question of day 11" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 9: Question of day 11.</figcaption>
+                            </figure>
+                            Time to hit Google once again. Time to find some old German lotto results! First, I used Google Translate before searching, as searching in the original language usually has a greater chance of success in my experience.
+                        </p>
+                        <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/11/Translate .png" alt="Google Translate of my search query" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 10: The Google Translate result of the search query I would otherwise use in English.</figcaption>
+                            </figure>
+                        <p>I ended up with the following text: Nur ungerade Zahlen der Lotterie von 1988. When queried, the second hit looked very promising.</p>
+                        <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/11/Google result.png" alt="Google result for Nur ungerade Zahlen der Lotterie von 1988" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 11: Google result for Nur ungerade Zahlen der Lotterie von 1988.</figcaption>
+                            </figure>
+                            <p>Scrolling down on this page we find our answer: <b>3 21 23 25 27 47</b>.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/11/Lottery results 1988 uneven numbers.png" alt="Lottery results in 1988" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 12: Lottery results in 1988, from <a href="https://www.lottozahlende.de/de_lotto_6aus49/de_zahlenarchiv_1988_sa.html">Lottozahlende.de</a>.</figcaption>
+                            </figure>
+                            <p>And to my surprise, another question appeared.
+                                <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/11/Question 2.png" alt="Second question of day 11" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 13: Second question of day 11.</figcaption>
+                            </figure> This should not be too hard to find either. 
+                            </p>
+                            <p>The Polish actor was quickly identified as Szymon Piotr Warszawski.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/11/Polish actor.png" alt="Szymon Piotr Warszawski" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 14: Google search result for the query: 24-09-1988 polish actor.</figcaption>
+                            </figure>
+                            <p>In the same results, there is a link to his Wikipedia page (in Polish), where he is seen with a race bib.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/11/him in a race bib.png" alt="Polish Wikipedia page where Szymon Piotr Warszawski is seen in a race bib" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 15: <a href="https://pl.wikipedia.org/wiki/Szymon_Piotr_Warszawski">Polish Wikipedia page</a> where Szymon Piotr Warszawski is seen in a race bib.</figcaption>
+                            </figure>
+                            <p>When I clicked on the image, I noticed that the original source of the image linked to a Flickr.com page. This page has indeed this picture, but also other pictures from the event. And by moving two images to the left, I found a man wearing a shirt with the event name clearly visible.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/11/Race bib visible at same event on someone else.png" alt="Man in the same race bib with the race name clearly visible" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 16: Man in a race bib with the race name clearly visible, from <a href="https://flickr.com/photos/96799800@N07/47601053231/in/photostream/">Flickr</a>. Note the race name in yellow and the red picture being the picture of the actor at the same event.</figcaption>
+                            </figure>
+                            <p>I Googled just to make sure that the text on the bib is really the name of the race, and that was indeed the case. I can say that the actor participated in the <b>Bieg po Nowe Życie</b> race.</p>
+                        </div>
+                        <!-- divider -->
+                        <hr class="my-4" />
+                        <!-- fourth challenge -->
+                        <div>
+                            <h1>Day 12</h1>
+                            <h2>That place works!</h2>
+                            <p>
+                                <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/12/Question.png" alt="Question of day 12" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 17: The question of day 12.</figcaption>
+                            </figure>
+                            </p>
+                            <p>This was a fun challenge, and I'm glad they are getting more difficult as the days progress.</p>
+                            <p>For this challenge, first, I need to know the company name. The image provided has all the company names removed, as well as the street name. But they didn't make it impossible to solve.</p>
+                            <p>My initial plan of attack consisted of reverse-searching the provided image. However, it became apparent that this would not work, or if it did, I was not patient enough.</p>
+                            <p>So, I went for my usual plan B: when in doubt, dork it out. I figured that if I just search for one of the slogans which are visible next to the entrance, I might find the company. And so, I did!</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/12/slogan search.png" alt="Searching for the exact slogan using quotes" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 18: Searching for the exact slogan visible using quotes.</figcaption>
+                            </figure>
+                            <p>I ended up on a PDF that included the exact same slogan, and the company name and website. The logo matched the blurred logo in the challenge-description, so I was confident I was going in the right direction.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/12/temp agency.png" alt="Commercial for the temp-agency" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 19: Commercial for the temp agency we are looking for.</figcaption>
+                            </figure>
+                            <p>Visiting their <a>website</a>, we can see that they have three different offices. I picked the office in Toulouse, based on the reflection in the store windows. Then, I looked the location up on Google Maps and went into Street View. I needed to change the date to 2021 to get a good view of the shop next door.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/12/locksmith.png" alt="The locksmith on Google Maps in 2021" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 20: The locksmith on Google Maps in 2021.</figcaption>
+                            </figure>
+                            <p>Now, as the last step I simply typed the phone number into Google, and the first hit shows us the answer.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/12/Legal name of the company.png" alt="Search result for 0562222200, showing the legal company name" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 21: Search result for 0562222200, showing the legal company name.</figcaption>
+                            </figure>
+                            <p>To conclude: the company's legal name is <b>M.V</b>! That's all for this post, I'll be back later to solve some more challenges in the next one.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/dstuut">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="mailto:ds2110full@gmail.com">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Dick Stuut <script>document.write(new Date().getFullYear())</script></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
