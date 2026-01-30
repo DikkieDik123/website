@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>OSINT Advent Calendar: Part 4</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About me</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/bg_dark_christmas.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>OSINT Advent Calendar: Part 4</h1>
+                            <span class="subheading">Day 13 to 16 of the OSINT For Fun Advent Calendar 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <!-- introduction-->
+                         <div>
+                            <h1>OSINT For Fun Advent Calendar: part 4</h1>
+                            <subheading>Spoiler alert: solutions ahead</subheading>
+                            <p>OSINT for Fun has a great number of challenges on their website. Each challenge is usually faster to complete than the Bellingcat ones, so that's why I do multiple at a time.</p>
+                            <p>This post, I'm going to show how I solved the challenges of day 13 through 16.</p>
+                        </div>
+                        <!-- challenge description-->
+                        <div>
+                            <h1>Day 13</h1>
+                            <h2>Locate the concert</h2>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/13/Question.png" alt="Question of day 13" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 1: Question of day 13.</figcaption>
+                            </figure>
+                            <p>The first step is to find the news article that mentions the concert. I figured the smartest way was to dork the answer, for we have enough information to define our query well. We know the rough date, the event and the news outlet. That created the following query: inurl:lemonde.fr “concert” AND “hier”. Hier is the French word for “yesterday”, which I figured probably would be included in the article. Note that under the Tools tab, I specified the date to be between 01/06/2013 and 31/08/2013.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/13/Google dork with translated results.png" alt="Google dork with translated results" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 2: Google dork with results translated from French to English</figcaption>
+                            </figure>
+                            <p>This resulted in five articles, of which the top three are the only relevant ones I could spot. And after reading these articles, it became clear that the article called <a href=”https://www.lemonde.fr/blog/mundolatino/2013/06/13/jimmy-cliff-reggae-night-a-rio-loco/”>Reggae Night</a> was the only article that talked about the concert in the previous day, instead of concerts or interviews that were more than one day ago, as was the case with the other articles. </p>
+                            <p>The article mentions that Jimmy Cliff performed at the Rio Loco festival. Googling this name, it appears that the festival took place in the park “Prairie des Filtres” in Toulouse. That isn't accurate enough, however. </p>                            
+                            <p>I went to Google Images and typed in: Rio Loco 2013. This showed a picture of the main stage with the bridge in the background. I found the location of this stage on Google maps, which is marked as Rio Loco. And this gave the correct coordinates (<b>43.59769, 1.43760</b>).</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/13/Search result for Rio Loco 2013.png" alt="Search result for Rio Loco 2013 in Google Images" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 3: Search result for Rio Loco 2013 in Google Images.</figcaption>
+                            </figure>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/13/Rio Loco Location.png" alt="Location of the main stage of the Rio Loco festival" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 4: Location of the main stage of the Rio Loco festival.</figcaption>
+                            </figure>
+                            <p>Then, a second question appeared. Find the photographer. This challenge was very easy and only took me a few minutes.</p> 
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/13/Question 2.png" alt="Second question of day 13" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 5: Second question of day 13.</figcaption>
+                            </figure>    
+                            <p>I went to YouTube and typed in: Rio Loco 2013 programme des concerts. The first hit was sufficient, and about halfway through the video the picture we are looking for appeared. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/13/Jimmy Cliff photo.png" alt="Screenshot of the Youtube video of the program of the festival in 2013" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 6: Screenshot of the <a href="https://www.youtube.com/watch?v=OzsPNSKc7YM">YouTube video</a> of the program of the festival in 2013.</figcaption>
+                            </figure>
+                            <p>Using a screenshot of this image, using Windows+Shift+S and reverse-image searching with Google resulted in many hits of where this photo was used. Again, on the first hit, the photographer was mentioned in the credits of the picture. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/13/photographers name.png" alt="The same picture, now credited with the photographers name" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 7: The same picture, now credited with the photographer's name, as seen at <a href="https://www.rnz.co.nz/national/programmes/sunday/audio/2018635594/caribbean-king-jimmy-cliff-on-why-we-love-reggae-man">this website</a>.</figcaption>
+                            </figure>
+                            <p>The photographer of that particular image of Jimmy Cliff is <b>Tom Sheehan</b>. </p>
+                        </div>
+                        <!-- divider between the first challenge and the second one-->
+                        <hr class="my-4" />
+                        <!-- second challenge-->
+                        <div>
+                            <h1>Day 14</h1>
+                            <h2>Flying Santas</h2>
+                            <p>Sofia Santos provides us with another Christmas-themed challenge: identify the airline, make and model of the aircraft seen in the picture. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/14/Question.png" alt="Question of day 14" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 8: Question of day 14.</figcaption>
+                            </figure>
+                            <p>The first step is to reverse-search the image. Using Google, I found a matching image from a website mentioning Airberlin, the airline we’re likely looking for. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/14/Air Berlin.png" alt="Question of day 14" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 9: Reverse image-search result.</figcaption>
+                            </figure>
+                            <p>Putting the images side-to-side, I verified that the images are very likely taken at the same event, only a second or two apart. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/14/Same plane, picture, location but only about a second or two apart.png" alt="Verification that the images are taken at roughly the same moment" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 10: Verification that the images are taken at roughly the same moment.</figcaption>
+                            </figure>
+                            <p>Visiting <a href="https://svenblogt.boardingarea.com/flying-home-for-christmas-mit-airberlin/">the page</a>, we are shown what appears to be a Boeing 737. Down the article, the name of the aircraft is mentioned, namely D-ABMS. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/14/Plane name.png" alt="Name of the plane as seen from the article" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 11: Name of the plane, as seen from the article.</figcaption>
+                            </figure>
+                            <p>Using Google, we quickly find that D-ABMS was a 737-800 registered to Air Berlin.</p> 
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/14/Type name.png" alt="Type of the plane" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 12: Plane information, including the make and model.</figcaption>
+                            </figure>
+                            <p>In conclusion, the answer to the challenge is: <b>Airberlin Boeing 737-800</b>.</p>
+                        </div>
+                        <!-- divider -->
+                        <hr class="my-4" />
+                        <!-- third challenge -->
+                        <div>
+                            <h1>Santa is not just the passenger this time</h1>
+                            <h2>In black and white this time</h2>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/15/Question.png" alt="Question of day 15" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 13: Question of day 15</figcaption>
+                            </figure>
+                            <p>I reverse-searched the image using Google. It gave me not-so-great results, showing me hundreds of variations of Santa in black and white. So, I decided to use Yandex.com instead. Yandex was more useful, showing me the uncropped picture as the first result. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/15/Yandex reverse-image search.png" alt="reverse-image search result on Yandex" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 14: reverse-image search on Yandex</figcaption>
+                            </figure>
+                            <p>This image links to an IMDb discussion. Here, someone posted this picture and provided the source to the image, namely the US Library of Congress. On their webpage, they provide a description of the image, in which one can read that the gentleman that is sitting down is William P. MacCracken. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/15/Text originally supplied with the image.png" alt="US Library of Congress entry for the picture, including a huge caption" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 15: US Library of Congress entry for the picture, including a huge caption</figcaption>
+                            </figure>
+                            <p>Googling William P. MacCracken, the first hit was his Wikipedia page. Interesting, but not in our interest. The next hit was a PDF from the Federal Aviation Authority about MacCracken. Here, we can read that he offered <b>Orville Wright</b> the first Federal pilot license, which Wright subsequently declined. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/15/First Pilot liscence.png" alt="The FAA PDF stating that Orville was offered the first FAA Pilot licence" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 16: The <a href="https://www.faa.gov/sites/faa.gov/files/about/history/people/William_P_MacCracken_Jr.pdf">FAA PDF</a> stating that Orville was offered the first FAA Pilot license</figcaption>
+                            </figure>
+                            <p>The second part of the challenge is finding out who the man on the right of Mr. MacCracken is.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/15/Question 2.png" alt="Second question of day 15" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 17: Second question of day 15</figcaption>
+                            </figure>
+                            <p>In Figure 15, we already found his first name, initial, and last name, namely, Clarence M. Young. Type his name into Google, and you find a Wikidata entry that mentions his full name: <b>Clarence Marshall Young</b>. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/15/Clarence Marshall Young.png'" alt="Wikidata showing the full name of Clarence M. Young" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 18: Wikidata showing the full name of Clarence M. Young</figcaption>
+                            </figure>
+                        </div>
+                        <!-- divider -->
+                        <hr class="my-4" />
+                        <!-- fourth challenge -->
+                        <div>
+                            <h1>Day 16</h2>
+                            <h2>Incidents at sea</h2>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/16/Question.png" alt="Question of day 16" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 19: Question of day 16</figcaption>
+                            </figure>
+                            <p>I found this day more challenging, but ended up spending only 30 minutes or so on it. First, I went to Google Maps and went to see where the incident roughly happened. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/16/Location on google maps.png" alt="Location of the incident" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 20: Location of the incident</figcaption>
+                            </figure>
+                            <p>It happened near Aden, in the Gulf of Aden. This is useful information. Next, I went to Google and executed the following query: “UKMTO” AND “Aden” AND “Incident”, filtering by dates between 01/09/2025 and 30/11/2025. Next, I unfortunately took a bit of a wrong turn.</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/16/Dork.png" alt="“UKMTO” AND “Aden” AND “Incident”, filtered by date" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 21: “UKMTO” AND “Aden” AND “Incident”, filtered by date</figcaption>
+                            </figure>
+                            <p>Clicking on the first hit, it showed that an incident occurred on September 23, 2025, where the Minervagracht was attacked by an unknown actor. I found the IMO then quickly, but it was wrong. Why? In hindsight, I should've known that the CAUSE of the incident was clear, namely an attack. So, I looked further. </p>
+                            <p>Going back to the Google results from my dork earlier, I found that on October 18, a vessel was hit by an unknown projectile. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/16/Googe result.png" alt="another hit in my original search" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 22: A different hit in my Google Search.</figcaption>
+                            </figure>
+                            <p>I also found a <a href="https://www.ukmto.org/-/media/ukmto/products/jmic-week-43-dashboard-20-october---26-october-2025-final.pdf?rev=8d1654638b014887ae39f6c9f28de885">PDF</a> that mentioned an incident on October 18. The rough location of the reported incident seems to match the challenge information.</p>
+                            <p>Looking into the page, it is visible that this incident occurred with the Falcon, with IMO <b>9014432</b>. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/16/tanker.png" alt="IMO of the Falcon" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 23: IMO of the Falcon.</figcaption>
+                            </figure>
+                            <p>The next question then popped up. Who was the commanding officer of the rescue operation?</p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/16/Second Question.png" alt="second question of day 16" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 24: Second question of day 16.</figcaption>
+                            </figure>
+                            <p>Using the information we know, I queried Google with the following: 18 october distress signal French navy. I figured that the French aircraft most likely belonged to the navy, and if not, Google probably would pick up on the word navy anyway. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/16/Resue operation.png" alt="AI Overview regarding the rescue operation of the incident" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 25: AI Overview regarding the rescue operation of the incident.</figcaption>
+                            </figure>
+                            <p>A <a href="https://maritimeoptima.com/maritime-news/explosion-and-fire-aboard-lpg-tanker-falcon-off-yemen-crew-evacuated-one-missing#:~:text=Crew%20Evacuated%2C%20One%20Missing.%20The%20Cameroon%2Dflagged%20LPG,130%20nautical%20miles%20southeast%20of%20Aden%2C%20Yemen.">news website</a> was listed as a source by the Google AI Overview.  This page mentions that the EUNAVFOR Aspides coordinated the search and rescue operation. Now, I wanted to find the commander of this force. After a quick Google, I found the Rear Admiral Vasileios Gryparis, but I wasn't satisfied with my verification that he actually had something to do with the incident. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/16/EUNAVFOR Aspides.png" alt="Maritime Optima mentioning EUNAVFOR" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 26: Maritime Optima mentioning EUNAVFOR</figcaption>
+                            </figure>
+                            <p>Then, I found <a href="https://www.eeas.europa.eu/eunavfor-aspides/eunavfor-aspides-force-commander-hoto-2_en">an article</a> that the Commander of Operations Rear Admiral Andrea Quondamatteo transferred his duties to Commodore Michail Lampiris in November. This means that he was commander of EUNAVFOR when the incident happened in October. A quick verification shows indeed that <b>Andrea Quondamatteo</b> was in command of the support operation for the Falcon on October 18, 2025. </p>
+                            <figure class="figure">
+                                <img src="assets/img/OSINT for fun advent calendar/16/Commander of Operation.png" alt="The change of command of EUNAVFOR" class="img-fluid"/>
+                                <figcaption class="figure-caption">Figure 27: The change of command of EUNAVFOR</figcaption>
+                            </figure>
+                            <p>That concludes another four days of this calendar. Just a few more to go!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/dstuut">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="mailto:ds2110full@gmail.com">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Dick Stuut <script>document.write(new Date().getFullYear())</script></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
